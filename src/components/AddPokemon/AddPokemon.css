@@ -1,0 +1,54 @@
+.add-pokemon-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .title {
+    color: #ff0000;
+    font-size: 2.5rem;
+  }
+  
+  .form, .nickname-container {
+    margin-top: 20px;
+  }
+  
+  .input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .fetch-button, .add-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .fetch-button:hover, .add-button:hover {
+    background-color: #45a049;
+  }
+  
+  .sprites-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .sprite {
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .sprite.selected {
+    border: 2px solid blue;
+  }
+  
