@@ -51,13 +51,12 @@
     50% 50% no-repeat;
   background-size: auto 100%;
   position: relative;
-  margin-bottom: 1em;
 }
 
 .pokemonCardContainer {
   height: 28rem;
   width: 400px;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
 }
 
 .pokemonImage {
@@ -85,7 +84,7 @@
 }
 
 .pokemonNickname {
-  color: #797373;
+  color: #e0e0e0;
   position: absolute;
   left: 22%;
   top: 72%;
@@ -123,4 +122,16 @@
   background: #0075be 90% 30% no-repeat;
   -webkit-box-shadow: 0 0 3px 3px #0075be;
   box-shadow: 0 0 3px 3px #0075be;
+}
+
+.favouriteIcon {
+  color: white;
+  position: absolute;
+  left: 74%;
+  top: 5%;
+  font-size: 1.4rem;
+}
+
+.favouriteIconFilled {
+  color: red !important;
 }

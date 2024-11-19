@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 import "./PokemonCard.css";
 
 const PokemonCard = ({
@@ -11,6 +14,14 @@ const PokemonCard = ({
   return (
     <div className="pokemonCardContainer">
       <div className="pokemonCard">
+        <div
+          className={`favouriteIcon ${isFavorite ? "favouriteIconFilled" : ""}`}
+          role="button"
+          tabindex="0"
+          onClick={markFavorite}
+        >
+          <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
+        </div>
         <img className="pokemonImage" src={poke.sprite} alt={poke.nickname} />
         <div className="pokemonLevel">
           {String(poke.level).padStart(3, "0")}

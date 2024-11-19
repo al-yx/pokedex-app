@@ -1,9 +1,9 @@
 .parent-container {
   font-family: Arial, sans-serif;
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   text-align: center;
-  background-image: url("https://sg.portal-pokemon.com/play/resources/pokedex/img/list_bg.jpg");
+  /* background-image: url("https://sg.portal-pokemon.com/play/resources/pokedex/img/list_bg.jpg"); */
 }
 
 .image-conatiner {

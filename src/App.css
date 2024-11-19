@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #1b252f;
+  background-image: url("https://sg.portal-pokemon.com/play/resources/pokedex/img/list_bg.jpg");
 }
 
 @media (prefers-reduced-motion: no-preference) {

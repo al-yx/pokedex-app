@@ -22,16 +22,7 @@ const PokemonList = ({
       <div className="allPokemonContainer">
         {/* Favorite Pokémon */}
         {favoritePokemonData && (
-          <div
-            className="favorite-pokemon"
-            style={{
-              backgroundColor: "gold",
-              padding: "10px",
-              marginBottom: "20px",
-              border: "2px solid black",
-            }}
-          >
-            <strong>Favorited Pokémon</strong>
+          <div className="favorite-pokemon">
             <PokemonCard
               key={favoritePokemonData.id}
               poke={favoritePokemonData}
