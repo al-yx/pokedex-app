@@ -1,27 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
-import PokemonList from "../PokemonList/PokemonList";
+import { fetchPokemon } from "./addPokemon.actions";
 import "./AddPokemon.css";
 
-const AddPokemon = () => {
+const AddPokemon = ({ onAddPokemon }) => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonData, setPokemonData] = useState(null);
   const [nickname, setNickname] = useState("");
   const [selectedSprite, setSelectedSprite] = useState("");
-  const [pokemons, setPokemons] = useState([]);
-  const [favoritePokemon, setFavoritePokemon] = useState(null);
-
-  const fetchPokemon = async () => {
-    try {
-      if (!pokemonName) return;
-      const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
-      );
-      setPokemonData(response?.data);
-    } catch (error) {
-      alert("Pokémon not found. Please check the name and try again.");
-    }
-  };
 
   const addPokemon = () => {
     if (nickname && selectedSprite) {
@@ -32,7 +17,7 @@ const AddPokemon = () => {
         sprite: selectedSprite,
         level: 1,
       };
-      setPokemons([...pokemons, newPokemon]);
+      onAddPokemon(newPokemon);
       resetForm();
     } else {
       alert("Please select a sprite and provide a nickname.");
@@ -46,9 +31,13 @@ const AddPokemon = () => {
     setSelectedSprite("");
   };
 
+  const onButtonClick = async () => {
+    const response = await fetchPokemon(pokemonName.toLowerCase());
+    setPokemonData(response?.data);
+  };
+
   return (
     <div className="add-pokemon-container">
-      <h1 className="title">Pokédex</h1>
       <div className="form">
         <input
           type="text"
@@ -57,7 +46,7 @@ const AddPokemon = () => {
           onChange={(e) => setPokemonName(e.target.value)}
           className="input"
         />
-        <button onClick={fetchPokemon} className="fetch-button">
+        <button onClick={onButtonClick} className="fetch-button">
           Fetch Pokémon
         </button>
       </div>
@@ -94,13 +83,6 @@ const AddPokemon = () => {
           </div>
         </div>
       )}
-
-      <PokemonList
-        pokemons={pokemons}
-        favoritePokemon={favoritePokemon}
-        setFavoritePokemon={setFavoritePokemon}
-        setPokemons={setPokemons}
-      />
     </div>
   );
 };

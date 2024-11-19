@@ -2,33 +2,30 @@ import React from "react";
 import "./PokemonCard.css";
 
 const PokemonCard = ({
-  pokemon,
-  isFavorite,
-  markFavorite,
+  poke,
+  isFavorite = false,
   levelUp,
   removePokemon,
-}) => (
-  <div className={`pokemon-card ${isFavorite ? "favorite" : ""}`}>
-    <img src={pokemon.sprite} alt="pokemon" className="pokemon-image" />
-    <div className="pokemon-details">
-      <p>Original Name: {pokemon.originalName}</p>
-      <p>Nickname: {pokemon.nickname}</p>
-      <p>Level: {pokemon.level}</p>
+  markFavorite,
+}) => {
+  return (
+    <div
+      className={`pokemon-card ${isFavorite ? "favorite" : ""}`}
+      style={{ marginBottom: "20px" }}
+    >
+      <img src={poke.sprite} alt={poke.nickname} style={{ width: "100px" }} />
+      <p>Original Name: {poke.originalName}</p>
+      <p>Nickname: {poke.nickname}</p>
+      <p>Level: {poke.level}</p>
+      <div className="buttons">
+        <button onClick={() => levelUp(poke.id)}>Level Up</button>
+        <button onClick={() => removePokemon(poke.id)}>Remove</button>
+        {markFavorite && (
+          <button onClick={markFavorite}>Mark as Favorite</button>
+        )}
+      </div>
     </div>
-    <div className="pokemon-actions">
-      <button onClick={levelUp} className="action-button">
-        Level Up
-      </button>
-      <button onClick={removePokemon} className="action-button">
-        Remove
-      </button>
-      {!isFavorite && (
-        <button onClick={markFavorite} className="action-button">
-          Mark as Favorite
-        </button>
-      )}
-    </div>
-  </div>
-);
+  );
+};
 
 export default PokemonCard;

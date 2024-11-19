@@ -1,0 +1,12 @@
+.parent-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.image-conatiner {
+  height: 100px;
+  width: 200px;
+  align-items: start;
+}

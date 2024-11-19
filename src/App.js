@@ -1,10 +1,11 @@
+import PokemonContainer from "./components/PokemonContainer/PokemonContainer";
+
 import "./App.css";
-import AddPokemon from "./components/AddPokemon/AddPokemon";
 
 function App() {
   return (
     <div className="App">
-      <AddPokemon />
+      <PokemonContainer />
     </div>
   );
 }
