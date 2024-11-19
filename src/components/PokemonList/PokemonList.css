@@ -1,10 +1,19 @@
 .pokemon-list {
-    margin-top: 30px;
-    text-align: left;
-    
-  }
-  
-  .pokemon-list h2 {
-    text-align: center;
-    color: #ff0000;
-  }
+  margin-top: 30px;
+  text-align: left;
+}
+
+.pokemon-list h2 {
+  text-align: center;
+  color: #ff0000;
+}
+
+.allPokemonContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.headerClass {
+  text-align: center;
+}

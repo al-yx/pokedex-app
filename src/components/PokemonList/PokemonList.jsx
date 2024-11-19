@@ -16,42 +16,45 @@ const PokemonList = ({
 
   return (
     <div className="pokemon-list">
-      <img src={YourPokemon} alt="heading pokemon" />
+      <div className="headerClass">
+        <img src={YourPokemon} alt="heading pokemon" />
+      </div>
+      <div className="allPokemonContainer">
+        {/* Favorite Pokémon */}
+        {favoritePokemonData && (
+          <div
+            className="favorite-pokemon"
+            style={{
+              backgroundColor: "gold",
+              padding: "10px",
+              marginBottom: "20px",
+              border: "2px solid black",
+            }}
+          >
+            <strong>Favorited Pokémon</strong>
+            <PokemonCard
+              key={favoritePokemonData.id}
+              poke={favoritePokemonData}
+              isFavorite
+              levelUp={levelUp}
+              removePokemon={removePokemon}
+            />
+          </div>
+        )}
 
-      {/* Favorite Pokémon */}
-      {favoritePokemonData && (
-        <div
-          className="favorite-pokemon"
-          style={{
-            backgroundColor: "gold",
-            padding: "10px",
-            marginBottom: "20px",
-            border: "2px solid black",
-          }}
-        >
-          <strong>Favorited Pokémon</strong>
-          <PokemonCard
-            key={favoritePokemonData.id}
-            poke={favoritePokemonData}
-            isFavorite
-            levelUp={levelUp}
-            removePokemon={removePokemon}
-          />
-        </div>
-      )}
-
-      {/* Non-favorite Pokémon */}
-      {pokemons
-        .filter((poke) => poke.id !== favoritePokemon)
-        .map((poke) => (
-          <PokemonCard
-            key={poke.id}
-            poke={poke}
-            levelUp={levelUp}
-            removePokemon={removePokemon}
-            markFavorite={() => setFavoritePokemon(poke.id)}
-          />
-        ))}
+        {/* Non-favorite Pokémon */}
+        {pokemons
+          .filter((poke) => poke.id !== favoritePokemon)
+          .map((poke) => (
+            <PokemonCard
+              key={poke.id}
+              poke={poke}
+              levelUp={levelUp}
+              removePokemon={removePokemon}
+              markFavorite={() => setFavoritePokemon(poke.id)}
+            />
+          ))}
+      </div>
     </div>
   );
 };
