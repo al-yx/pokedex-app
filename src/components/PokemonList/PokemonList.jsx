@@ -17,7 +17,11 @@ const PokemonList = ({
   return (
     <div className="pokemon-list">
       <div className="headerClass">
-        <img src={YourPokemon} alt="heading pokemon" />
+        <img
+          src={YourPokemon}
+          alt="heading pokemon"
+          style={{ width: "400px", height: "auto" }}
+        />
       </div>
       <div className="allPokemonContainer">
         {/* Favorite Pokémon */}
