@@ -148,3 +148,55 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 480px) {
+  .input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+  .fetch-button {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b4ebff;
+    border-radius: 0 16px 16px 0;
+    border: none;
+  }
+
+  .nickname-container {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nickname-container .input {
+    border-radius: 16px;
+  }
+  .add-button {
+    width: fit-content;
+  }
+
+  .sprites-container {
+    gap: 5px;
+  }
+
+  .sprite-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .popup {
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
