@@ -1,28 +1,91 @@
-# Pokémon Manager App
+# Pokedex Project
 
-This is a Pokémon Manager App built using React, which allows users to search for Pokémon, view their available sprites, add them to their collection with nicknames, level them up, mark favorites, and remove them.
+A responsive web application that allows users to create and manage their personal collection of Pokémon using the PokéAPI.
 
----
+## 🌟 Features
 
-## Features
+- Add Pokémon
 
-- Fetch Pokémon data from the [PokéAPI](https://pokeapi.co/).
-- Select a sprite and nickname for the Pokémon.
-- Add Pokémon to your personal collection.
-- Level up, mark favorites, and remove Pokémon from your collection.
-- Visually enhanced user interface with modularized components and styling.
+  - Search and add Pokémon by name
 
----
+  - Choose from available sprite variations
 
-## Setup Instructions
+  - Assign custom nicknames
+
+  - Automatic level 1 initialization
+
+- Dashboard Management
+
+  - View complete Pokémon collection
+
+  - Display custom names, official names, levels, and sprites
+
+  - Level up the Pokémon
+
+  - Remove Pokémon from collection
+
+- Favorite Pokémon
+
+  - Mark one Pokémon as favorite
+
+  - Automatic prioritization in dashboard display
+
+  - Visual highlighting of favorite Pokémon
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Ensure you have **Node.js** installed. You can download it [here](https://nodejs.org/).
-- **npm** (Node Package Manager) or **yarn** should be installed globally.
+- Node.js (v18 or higher)
 
-### Steps to Set Up
+- npm or yarn package manager
 
-1. Clone this repository:
-   git clone https://github.com/<your-github-username>/pokemon-manager-app.git
-   cd pokemon-manager-app
+- Modern web browser
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+
+git clone https://github.com/al-yx/pokedex-project.git
+
+cd pokedex-project
+
+```
+
+2. Install dependencies:
+
+```bash
+
+npm install
+
+# or
+
+yarn install
+
+```
+
+3. Start the development server:
+
+```bash
+
+npm run dev
+
+# or
+
+yarn dev
+
+```
+
+4. Open your browser and navigate to http://localhost:3000
+
+## 🛠️ Tech Stack
+
+- React.js
+
+- Vanilla CSS
+
+- Jest & React Testing Library
+
+- PokéAPI
