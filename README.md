@@ -2,6 +2,8 @@
 
 A responsive web application that allows users to create and manage their personal collection of Pokémon using the PokéAPI.
 
+![Pokedex Logo](https://github.com/al-yx/pokedex-app/blob/main/src/images/main_page.png)
+
 ## 🌟 Features
 
 - Add Pokémon
