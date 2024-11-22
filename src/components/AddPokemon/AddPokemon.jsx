@@ -9,6 +9,7 @@ const AddPokemon = ({ onAddPokemon }) => {
   const [selectedSprite, setSelectedSprite] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const addPokemon = () => {
     if (nickname && selectedSprite) {
@@ -20,13 +21,10 @@ const AddPokemon = ({ onAddPokemon }) => {
         level: 1,
       };
       onAddPokemon(newPokemon);
-      // console.log("pokemon added");
       setShowPopup(true);
-      // console.log("popup will show now", showPopup);
       setTimeout(() => setShowPopup(false), 2000);
       resetForm();
     } else {
-      // alert("Please select a sprite and provide a nickname.");
       setShowWarning(true);
       setTimeout(() => setShowWarning(false), 3000);
     }
@@ -40,7 +38,14 @@ const AddPokemon = ({ onAddPokemon }) => {
   };
 
   const onButtonClick = async () => {
-    const response = await fetchPokemon(pokemonName.toLowerCase());
+    const errorCallback = () => {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 3000);
+    };
+    const response = await fetchPokemon(
+      pokemonName.toLowerCase(),
+      errorCallback
+    );
     setPokemonData(response?.data);
   };
 
@@ -103,6 +108,7 @@ const AddPokemon = ({ onAddPokemon }) => {
         </div>
       )}
       {showPopup && <div className="popup">Pokémon has been added!</div>}
+      {showError && <div className="popup">Pokémon could not be found!</div>}
     </div>
   );
 };
