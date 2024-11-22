@@ -13,16 +13,19 @@ const PokemonList = ({
   const favoritePokemonData = pokemons.find(
     (poke) => poke.id === favoritePokemon
   );
+  const hasPokemons = pokemons.length > 0;
 
   return (
     <div className="pokemon-list">
-      <div className="headerClass">
-        <img
-          src={YourPokemon}
-          alt="heading pokemon"
-          style={{ width: "400px", height: "auto" }}
-        />
-      </div>
+      {hasPokemons && (
+        <div className="headerClass">
+          <img
+            src={YourPokemon}
+            alt="heading Pokédex"
+            style={{ width: "400px", height: "auto" }}
+          />
+        </div>
+      )}
       <div className="allPokemonContainer">
         {/* Favorite Pokémon */}
         {favoritePokemonData && (
