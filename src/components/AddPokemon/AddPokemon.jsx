@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { fetchPokemon } from "./addPokemon.actions";
 import "./AddPokemon.css";
 
@@ -49,6 +49,16 @@ const AddPokemon = ({ onAddPokemon }) => {
     setPokemonData(response?.data);
   };
 
+  const pokemonNameOnChange = useCallback(
+    (e) => setPokemonName(e.target.value),
+    []
+  );
+
+  const pokemonNicknameNameOnChange = useCallback(
+    (e) => setNickname(e.target.value),
+    []
+  );
+
   return (
     <div className="add-pokemon-container">
       {showWarning && (
@@ -81,7 +91,7 @@ const AddPokemon = ({ onAddPokemon }) => {
               type="text"
               placeholder="Enter Nickname"
               value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
+              onChange={pokemonNicknameNameOnChange}
               className="input"
             />
             <button onClick={addPokemon} className="add-button">
@@ -95,7 +105,7 @@ const AddPokemon = ({ onAddPokemon }) => {
             type="text"
             placeholder="Enter Pokémon name"
             value={pokemonName}
-            onChange={(e) => setPokemonName(e.target.value)}
+            onChange={pokemonNameOnChange}
             className="input"
           />
           <button onClick={onButtonClick} className="fetch-button">

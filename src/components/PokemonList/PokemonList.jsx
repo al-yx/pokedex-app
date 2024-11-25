@@ -36,6 +36,7 @@ const PokemonList = ({
               isFavorite
               levelUp={levelUp}
               removePokemon={removePokemon}
+              setFavoritePokemon={setFavoritePokemon}
             />
           </div>
         )}
@@ -49,7 +50,7 @@ const PokemonList = ({
               poke={poke}
               levelUp={levelUp}
               removePokemon={removePokemon}
-              markFavorite={() => setFavoritePokemon(poke.id)}
+              setFavoritePokemon={setFavoritePokemon}
             />
           ))}
       </div>

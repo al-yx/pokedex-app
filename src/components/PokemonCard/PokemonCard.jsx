@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,8 +9,12 @@ const PokemonCard = ({
   isFavorite = false,
   levelUp,
   removePokemon,
-  markFavorite,
+  setFavoritePokemon,
 }) => {
+  const markFavorite = useCallback(() => {
+    setFavoritePokemon(poke.id);
+  }, [setFavoritePokemon, poke]);
+
   return (
     <div className="pokemonCardContainer">
       <div className="pokemonCard">
